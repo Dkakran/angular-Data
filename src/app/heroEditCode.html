@@ -1,0 +1,12 @@
+<ul class="heroes">
+    <a>
+     <li *ngFor="let item of heroes; let i=index" [routerLink]="['/detail', item.id]"  class="col-1-4"[class.selected]="item === selectedHero" (click)="onSelect(item)">
+      <span class="badge">{{item.id}}</span> {{item.name}}
+      <button class="delete" style ='float:right'
+      (click)="delete(item,i); $event.stopPropagation()">x</button>
+      
+       <button class="delete" style ='float:right'
+      (click)="delete(item,i)">{{item.dob | date}}</button>
+     </li>
+     </a>
+   </ul>
